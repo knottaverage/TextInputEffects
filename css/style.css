@@ -1,21 +1,58 @@
+html {
+  box-sizing: border-box;
+	background: url(../img/bg.png) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+:root {
+	margin: 0;
+	padding: 0;
+}
+.overlay {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.5)
+}
+
+.container {
+	width: 400px;
+	height: 400px;
+	padding: 1em;
+	border-radius: 0.25rem;
+	box-shadow: 0 0 1px rgba(0,0,0,0.2);
+	margin: auto;
+	background: #fff;
+	border: solid 1px #d0d0d0;
+	position: relative;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+}
+
 .input {
 	position: relative;
 	z-index: 1;
-	display: inline-block;
-	margin: 1em;
-	max-width: 400px;
-	width: calc(100% - 2em);
+	width: 100%;
 	vertical-align: top;
+	display: block;
+	margin-bottom: 20px;
 }
 
 .input__field {
 	position: relative;
-	display: block;
-	float: right;
 	padding: 0.8em;
-	width: 60%;
 	border: none;
-	border-radius: 0;
+	border-radius: 0.35em;
 	background: #f0f0f0;
 	color: #aaa;
 	font-weight: bold;
@@ -29,56 +66,40 @@
 
 .input__label {
 	display: inline-block;
-	float: right;
 	padding: 0 1em;
-	width: 40%;
 	color: #6a7989;
 	font-weight: bold;
 	font-size: 70.25%;
 	-webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
 	user-select: none;
 }
 
 .input__label-content {
 	position: relative;
 	display: block;
-	padding: 1.6em 0;
+	height: 100%;
 	width: 100%;
 }
 
-.graphic {
-	position: absolute;
-	top: 0;
-	left: 0;
-	fill: none;
+.content {
+	width: 100%;
 }
-
-.icon {
-	color: #ddd;
-	font-size: 150%;
-}
-
 /* Individual styles */
+
 
 /* Minoru */
 .input__field--minoru {
-	width: 100%;
+	width: inherit;
 	background: #fff;
-	box-shadow: 0px 0px 0px 2px transparent;
-	color: #eca29b;
+	box-shadow: 0px 0px 0px 1px #d0d0d0;
+	color: #3296DC;
 	-webkit-transition: box-shadow 0.3s;
 	transition: box-shadow 0.3s;
 }
 
 .input__label--minoru {
 	padding: 0;
-	width: 100%;
+	width: inherit;
 	text-align: left;
 }
 
@@ -87,36 +108,31 @@
   	position: absolute;
   	top: 0;
   	z-index: -1;
-  	width: 100%;
+  	width: inherit;
   	height: 4em;
 	box-shadow: 0px 0px 0px 0px;
-	color: rgba(199,152,157, 0.6);
+	color: rgba(#3296DC, 0.6);
 }
 
 .input__field--minoru:focus {
-	box-shadow: 0px 0px 0px 2px #eca29b;
+	/* Focus Border */
+	box-shadow: 0px 0px 0px 2px #3296DC;
 }
 
 .input__field--minoru:focus + .input__label--minoru {
 	pointer-events: none;
 }
 
-.input__field--minoru:focus + .input__label--minoru::after {
-	-webkit-animation: anim-shadow 0.3s forwards;
-	animation: anim-shadow 0.3s forwards;
-}
-
-@-webkit-keyframes anim-shadow {
-	to {
-		box-shadow: 0px 0px 100px 50px;
-    	opacity: 0;
-	}
+.input__field--minoru:focus {
+	width: inherit;
+	animation: anim-shadow 0.2s forwards;
 }
 
 @keyframes anim-shadow {
-	to {
-		box-shadow: 0px 0px 100px 50px;
-    	opacity: 0;
+	99% {
+		width: inherit;
+		box-shadow: 0px 0px 20px 2px;
+    	opacity: 1;
 	}
 }
 
